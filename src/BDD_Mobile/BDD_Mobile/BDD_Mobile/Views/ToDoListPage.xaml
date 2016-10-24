@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BDDMobile"
+             xmlns:controls="clr-namespace:BDDMobile.Controls;assembly=BDDMobile"
+             xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             mvvm:ViewModelLocator.AutowireViewModel="True"
+             x:Class="BDDMobile.Pages.TodoListPage"
+             Title="The TODO list">
+
+  <ContentPage.Content>
+
+    <StackLayout Padding="5,10,5,5">
+
+      <Label Text="Welcome to The TODO list"
+               VerticalOptions="Start"
+               HorizontalOptions="Center" />
+
+      <ListView ItemsSource="{Binding TodoItems}" SelectedItem="{Binding SelectedTodoItem}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <controls:TodoListItem />
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+
+      <Button Text="+ Add new Todo Item"  
+              TextColor="White" 
+              BackgroundColor="#0097fb" 
+              Command="{Binding AddNewTodoItemCommand}"
+              HeightRequest="50"
+              VerticalOptions="End"  />
+
+    </StackLayout>
+    
+  </ContentPage.Content>
+</ContentPage>

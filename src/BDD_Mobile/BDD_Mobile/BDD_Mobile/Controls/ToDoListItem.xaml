@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:valueConverters="clr-namespace:BDDMobile.ValueConverters;assembly=BDDMobile"
+             x:Class="BDDMobile.Controls.TodoListItem" 
+             Padding="10, 0, 10, 0">
+  
+  <Grid.Resources>
+    <ResourceDictionary>
+
+      <valueConverters:TodoStatusToIconConverter x:Key="TodoStatusToIconConv" />
+      
+    </ResourceDictionary>
+  </Grid.Resources>
+
+  <StackLayout Grid.Row="0" Grid.Column="1" Padding="0,3,0,0" >
+    <Label Text="{Binding Name}" FontSize="16" LineBreakMode="TailTruncation" />
+  </StackLayout>
+  <Label Grid.Row="1" Grid.Column="1" Text="{Binding Details}" FontSize="9" />
+  
+  <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+         Source="{Binding TodoStatus, Converter={StaticResource TodoStatusToIconConv}}"/>
+  
+<Grid.RowDefinitions>
+  <RowDefinition Height="23" ></RowDefinition>
+  <RowDefinition Height="*" ></RowDefinition>
+</Grid.RowDefinitions>
+  
+<Grid.ColumnDefinitions>
+  <ColumnDefinition Width="40" ></ColumnDefinition>
+  <ColumnDefinition Width="*" ></ColumnDefinition>
+</Grid.ColumnDefinitions>
+</Grid>

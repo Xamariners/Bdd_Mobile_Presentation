@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BDDMobile"
+             xmlns:valueConverters="clr-namespace:BDDMobile.ValueConverters;assembly=BDDMobile"
+             xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             mvvm:ViewModelLocator.AutowireViewModel="True"
+             x:Class="BDDMobile.Pages.AddTodoItemPage"
+             Title="Add new Todo Item">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+
+      <valueConverters:TodoStatusToIconConverter x:Key="TodoStatusToIconConv" />
+
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <ContentPage.Content>
+
+    <Grid Padding="5,10,5,5">
+
+      <StackLayout  Grid.Row="0" Padding="10,10,10,0" VerticalOptions="Start">
+
+        <Label Text="Todo Item Title:" ></Label>
+        <Entry VerticalOptions="Center" Text="{Binding TodoName}" />
+
+        <Label Text="Todo Item Description:" ></Label>
+        <Editor Text="{Binding TodoDescription}"
+                 VerticalOptions="Center"
+                 HeightRequest="110"/>
+
+      </StackLayout>
+      
+
+      <Button Grid.Row="1" Text="Save Todo Item" HeightRequest="50"
+              BackgroundColor="#0097fb"
+              Command="{Binding SaveNewTodoItemCommand}"
+              TextColor="White"
+              VerticalOptions="End"  />
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" ></RowDefinition>
+        <RowDefinition Height="50" ></RowDefinition>
+      </Grid.RowDefinitions>
+    </Grid>
+
+  </ContentPage.Content>
+</ContentPage>
