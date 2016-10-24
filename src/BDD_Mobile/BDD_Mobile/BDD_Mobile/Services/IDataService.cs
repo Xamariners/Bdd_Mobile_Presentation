@@ -9,6 +9,6 @@ namespace BDDMobile.Services
 {
     public interface IDataService
     {
-        Task<List<TodoItem>> GetTodoItems();
+        List<TodoItem> GetTodoItems();
     }
 }

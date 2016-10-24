@@ -25,16 +25,16 @@ namespace BDDMobile
         
         protected override void OnInitialized()
         {
-            NavigationService.NavigateAsync(nameof(TodoListPage));
+            NavigationService.NavigateAsync($"NavigationPage/{nameof(TodoListPage)}");
         }
 
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<NavigationPage>();
 
-            Container.RegisterTypeForNavigation<TodoListPage>();
-            Container.RegisterTypeForNavigation<TodoItemDetailPage>();
-            Container.RegisterTypeForNavigation<AddTodoItemPage>();
+            Container.RegisterTypeForNavigation<TodoListPage, TodoListPageViewModel>();
+            Container.RegisterTypeForNavigation<TodoItemDetailPage, TodoItemDetailPageViewModel>();
+            Container.RegisterTypeForNavigation<AddTodoItemPage, AddTodoItemPageViewModel>();
 
             Container.RegisterType<IDataService, FakeDataService>(new ContainerControlledLifetimeManager());
         }

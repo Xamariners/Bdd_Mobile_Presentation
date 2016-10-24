@@ -21,7 +21,7 @@ namespace BDDMobile.UnitTest
         protected override void SetViewModelMapping()
         {
             TestViewFactory.EnableCache = false;
-            RegisterView<TodoListPage, TodoListViewModel>();
+            RegisterView<TodoListPage, TodoListPageViewModel>();
         }
         
        

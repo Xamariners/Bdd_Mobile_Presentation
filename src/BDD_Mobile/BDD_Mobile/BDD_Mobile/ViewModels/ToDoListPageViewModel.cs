@@ -20,7 +20,7 @@ using Xamarin.Forms;
 namespace BDDMobile.ViewModels
 {
     [ImplementPropertyChanged]
-    public class TodoListViewModel : ViewModelBase
+    public class TodoListPageViewModel : ViewModelBase
     {
         public List<TodoItem> TodoItems { get; set; }
 
@@ -29,17 +29,17 @@ namespace BDDMobile.ViewModels
         private readonly IDataService _dataService;
         private readonly INavigationService _navigationService;
 
-        public TodoListViewModel(INavigationService navigationService, IDataService dataService)
+        public TodoListPageViewModel(INavigationService navigationService, IDataService dataService)
         {
             _dataService = dataService;
             _navigationService = navigationService;
 
-            Initialize().Wait();
+            Initialize();
         }
 
-        public override async Task SetViewModel()
+        public override void SetViewModel()
         {
-            TodoItems = await _dataService.GetTodoItems();
+            TodoItems = _dataService.GetTodoItems();
         }
 
         public TodoItem SelectedTodoItem

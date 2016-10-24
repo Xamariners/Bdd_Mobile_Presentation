@@ -17,12 +17,12 @@ namespace BDDMobile.ViewModels
     {
         public INavigation Navigation { get; set; }
 
-        public abstract Task SetViewModel();
+        public abstract void SetViewModel();
 
-        protected async Task Initialize()
+        protected void Initialize()
         {
             // call  on derived constructor
-            await SetViewModel();
+            SetViewModel();
         }
 
         public virtual void OnNavigatedFrom(NavigationParameters parameters)

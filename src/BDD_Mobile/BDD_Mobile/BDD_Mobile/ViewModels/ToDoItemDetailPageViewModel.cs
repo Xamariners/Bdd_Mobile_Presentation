@@ -15,17 +15,17 @@ using Xamarin.Forms;
 namespace BDDMobile.ViewModels
 {
     [ImplementPropertyChanged]
-    public class TodoItemDetailViewModel : ViewModelBase
+    public class TodoItemDetailPageViewModel : ViewModelBase
     {
         public TodoItem TodoItem { get; set; }
 
 
-        public TodoItemDetailViewModel()
+        public TodoItemDetailPageViewModel()
         {
-            Initialize().Wait();
+            Initialize();
         }
 
-        public override async Task SetViewModel()
+        public override void SetViewModel()
         {
           
         }

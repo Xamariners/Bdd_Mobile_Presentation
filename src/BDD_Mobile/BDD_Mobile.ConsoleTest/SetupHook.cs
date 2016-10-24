@@ -16,7 +16,7 @@ namespace BDDMobile.UnitTest
         public void BeforeScenario()
         {
             // bootstrap test app with your test app and your starting viewmodel
-            new TestAppBootstrap().RunApplication<TodoAppTest, TodoListViewModel>();
+            new TestAppBootstrap().RunApplication<TodoAppTest, TodoListPageViewModel>();
         }
     }
 }

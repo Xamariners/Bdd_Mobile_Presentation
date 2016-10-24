@@ -21,14 +21,14 @@ namespace BDDMobile.UnitTest
         [Given(@"I am on the TodoList Page")]
         public void GivenIAmOnTheTodoListPage()
         {
-            Resolver.Instance.Resolve<INavigationService>().PushAsync<TodoListViewModel>();
-            Resolver.Instance.Resolve<INavigationService>().CurrentViewModelType.ShouldEqualType<TodoListViewModel>();
+            Resolver.Instance.Resolve<INavigationService>().PushAsync<TodoListPageViewModel>();
+            Resolver.Instance.Resolve<INavigationService>().CurrentViewModelType.ShouldEqualType<TodoListPageViewModel>();
         }
         
         [Then(@"I should see (.*) items")]
         public void ThenIShouldSeeItems(int amount)
         {
-            GetCurrentViewModel<TodoListViewModel>().TodoItems.Count.ShouldEqual(amount);
+            GetCurrentViewModel<TodoListPageViewModel>().TodoItems.Count.ShouldEqual(amount);
         }
     }
 }

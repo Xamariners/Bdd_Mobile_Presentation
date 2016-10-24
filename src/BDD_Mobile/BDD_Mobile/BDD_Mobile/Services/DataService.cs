@@ -9,7 +9,7 @@ namespace BDDMobile.Services
 {
     public class DataService : IDataService
     {
-        public Task<List<TodoItem>> GetTodoItems()
+        public List<TodoItem> GetTodoItems()
         {
             throw new NotImplementedException();
         }

@@ -41,10 +41,10 @@
     <Compile Include="Controls\ToDoListItem.xaml.cs">
       <DependentUpon>ToDoListItem.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\AddTodoItemViewModel.cs" />
+    <Compile Include="ViewModels\AddTodoItemPageViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
-    <Compile Include="ViewModels\ToDoItemDetailViewModel.cs" />
-    <Compile Include="ViewModels\ToDoListViewModel.cs" />
+    <Compile Include="ViewModels\TodoItemDetailPageViewModel.cs" />
+    <Compile Include="ViewModels\TodoListPageViewModel.cs" />
     <Compile Include="Views\AddToDoItemPage.xaml.cs">
       <DependentUpon>AddToDoItemPage.xaml</DependentUpon>
     </Compile>
