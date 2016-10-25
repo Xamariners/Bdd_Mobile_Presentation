@@ -16,12 +16,18 @@ using SpecFlow.XFormsNavigation;
 
 namespace BDDMobile.UnitTest
 {
+    using Prism;
+    using Prism.Unity;
+
+    using Xamarin.Forms;
+
     public class TodoAppTest : TestApp
     {
         protected override void SetViewModelMapping()
         {
             TestViewFactory.EnableCache = false;
             RegisterView<TodoListPage, TodoListPageViewModel>();
+            RegisterView<TodoItemDetailPage, TodoItemDetailPageViewModel>();
         }
         
        
@@ -34,6 +40,7 @@ namespace BDDMobile.UnitTest
             Resolver.Instance.Register<IDataService, FakeDataService>(LifetimeScopeEnum.Singleton);
 
             base.InitialiseContainer();
+
         }
     }
 }

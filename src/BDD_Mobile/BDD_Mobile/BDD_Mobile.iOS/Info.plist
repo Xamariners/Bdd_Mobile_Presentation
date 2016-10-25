@@ -25,7 +25,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>BDDMobile</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.tippstr.BDDMobile</string>
+	<string>com.tippstr.consumer</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleIconFiles</key>

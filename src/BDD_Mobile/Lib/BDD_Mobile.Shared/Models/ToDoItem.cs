@@ -17,7 +17,7 @@ namespace BDDMobile.Shared.Models
         public string Name { get; set; }
 
         [DataMember]
-        public string Details { get; set; }
+        public string Description { get; set; }
 
         [DataMember]
         public TodoStatus TodoStatus { get; set; }

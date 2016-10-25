@@ -39,7 +39,7 @@ namespace BDDMobile.ViewModels
                     FakeTodoData.FakeData.Add(new TodoItem()
                     {
                         Name = TodoName,
-                        Details = TodoDescription,
+                        Description = TodoDescription,
                         Created = DateTime.Now,
                         TodoStatus = TodoStatus.Open,
                         Id = Guid.NewGuid(),

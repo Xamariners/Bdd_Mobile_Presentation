@@ -12,7 +12,7 @@ namespace BDDMobile.Services
     {
         public List<TodoItem> GetTodoItems()
         {
-            return FakeTodoData.FakeData;
+            return FakeTodoData.FakeData.OrderBy(x => x.Name).ToList();
         }
     }
 }
