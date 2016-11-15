@@ -16,7 +16,7 @@
                VerticalOptions="Start"
                HorizontalOptions="Center" />
 
-      <ListView ItemsSource="{Binding TodoItems}" SelectedItem="{Binding SelectedTodoItem}">
+      <ListView ItemsSource="{Binding TodoItems}" SelectedItem="{Binding SelectedTodoItem}" AutomationId="lstItems">
         <ListView.ItemTemplate>
           <DataTemplate>
             <ViewCell>
@@ -31,7 +31,8 @@
               BackgroundColor="#0097fb" 
               Command="{Binding AddNewTodoItemCommand}"
               HeightRequest="50"
-              VerticalOptions="End"  />
+              VerticalOptions="End"
+        AutomationId="btnNewItem"/>
 
     </StackLayout>
     

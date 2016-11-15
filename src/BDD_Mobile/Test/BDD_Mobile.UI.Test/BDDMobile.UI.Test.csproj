@@ -66,16 +66,25 @@
       <Link>Todo\ToDo.feature.cs</Link>
       <DependentUpon>Todo\ToDo.feature</DependentUpon>
     </Compile>
+    <Compile Include="..\BDD_Mobile.Console.Test\ToDo1.feature.cs">
+      <Link>Todo\ToDo1.feature.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToDo.feature</DependentUpon>
+    </Compile>
     <Compile Include="Todo\TodoSteps.cs" />
     <None Include="..\BDD_Mobile.Console.Test\ToDo.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <Link>Todo\ToDo.feature</Link>
+      <LastGenOutput>ToDo1.feature.cs</LastGenOutput>
     </None>
     <Compile Include="Login\LoginStepsUI.cs" />
     <Compile Include="AppInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

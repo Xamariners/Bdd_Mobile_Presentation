@@ -13,6 +13,7 @@ namespace BDDMobile.UnitTest
 
     using Microsoft.Practices.Unity;
 
+    using Prism.Common;
     using Prism.Unity;
 
     using SpecFlow.XFormsDependency;
@@ -26,7 +27,14 @@ namespace BDDMobile.UnitTest
         public void BeforeScenario()
         {
             // bootstrap test app with your test app and your starting viewmodel
-            new TestAppBootstrap().RunApplication<TodoAppTest, TodoListPageViewModel>();
+            var app = new TestAppBootstrap();
+            app.RunApplication<TodoAppTest, TodoListPageViewModel>();
+
+            Resolver.Instance.Resolve<IApplicationProvider>().MainPage = app.TestApp.MainPage;
+            Resolver.Instance.Resolve<IUnityContainer>().RegisterTypeForNavigation<NavigationPage>();
+            Resolver.Instance.Resolve<IUnityContainer>().RegisterTypeForNavigation<TodoListPage, TodoListPageViewModel>(nameof(TodoListPage));
+            Resolver.Instance.Resolve<IUnityContainer>().RegisterTypeForNavigation<TodoItemDetailPage, TodoItemDetailPageViewModel>(nameof(TodoItemDetailPage));
+            Resolver.Instance.Resolve<IUnityContainer>().RegisterTypeForNavigation<AddTodoItemPage, AddTodoItemPageViewModel>(nameof(AddTodoItemPage));
 
         }
     }

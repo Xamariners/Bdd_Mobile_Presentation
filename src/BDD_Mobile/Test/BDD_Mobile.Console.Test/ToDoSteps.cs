@@ -13,10 +13,9 @@ namespace BDDMobile.UnitTest
 
     using BDDMobile.Pages;
     using BDDMobile.Shared.Enums;
-
     using Microsoft.Practices.Unity;
 
-    using Prism.Unity;
+    using Prism.Common;
 
     using Xamarin.Forms;
 
@@ -65,27 +64,32 @@ namespace BDDMobile.UnitTest
 
         [Then(@"I am on the TodoItemDetail Page")]
         public void ThenIAmOnTheTodoItemDetailPage()
-        {
-            Resolver.Instance.Resolve<INavigationService>().CurrentViewModelType.ShouldEqualType<TodoItemDetailPageViewModel>();
+        { 
+           GetViewModel<TodoItemDetailPageViewModel>().GetType().ShouldEqualType<TodoItemDetailPageViewModel>();
         }
 
         [Then(@"the item name is ""(.*)""")]
         public void ThenTheItemNameIs(string name)
         {
-            GetCurrentViewModel<TodoItemDetailPageViewModel>().TodoItem.Name.ShouldEqual(name);
+            GetViewModel<TodoItemDetailPageViewModel>().TodoItem.Name.ShouldEqual(name);
         }
 
         [Then(@"the item description is ""(.*)""")]
         public void ThenTheItemDescriptionIs(string description)
         {
-            GetCurrentViewModel<TodoItemDetailPageViewModel>().TodoItem.Description.ShouldEqual(description);
+            GetViewModel<TodoItemDetailPageViewModel>().TodoItem.Description.ShouldEqual(description);
         }
 
         [Then(@"the item status is ""(.*)""")]
         public void ThenTheItemStatusIs(TodoStatus status)
         {
-            GetCurrentViewModel<TodoItemDetailPageViewModel>().TodoItem.TodoStatus.ShouldEqual(status);
+            GetViewModel<TodoItemDetailPageViewModel>().TodoItem.TodoStatus.ShouldEqual(status);
         }
 
+        private TViewModel GetViewModel<TViewModel>()
+        {  
+            var page = ((NavigationPage)Resolver.Instance.Resolve<IApplicationProvider>().MainPage).CurrentPage;
+            return (TViewModel)page.BindingContext;
+        }
     }
 }

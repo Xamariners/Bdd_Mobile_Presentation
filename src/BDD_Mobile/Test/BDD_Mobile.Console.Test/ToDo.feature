@@ -9,6 +9,7 @@ Scenario Outline: Count Todo List items
 Examples: 
 | amount |
 | 93     |
+| 56     |
 
 
 Scenario Outline: Todo List should be ordered alphabatically
@@ -30,4 +31,4 @@ Scenario Outline: View Todo item details
 
 Examples: 
 | itemName         | itemDescription | itemStatus |
-| Buy a new guitar | Get a fender    | Open       |
+| Buy a new guitar | Get a Fender    | Open       |

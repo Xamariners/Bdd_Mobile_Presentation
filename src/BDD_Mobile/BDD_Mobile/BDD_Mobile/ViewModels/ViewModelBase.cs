@@ -13,7 +13,7 @@ using Xamarin.Forms;
 
 namespace BDDMobile.ViewModels
 {
-    public abstract class ViewModelBase : BindableBase, IViewModel, INavigationAware
+    public abstract class ViewModelBase : BindableBase, IViewModel, INavigationAware, INotifyPropertyChanged
     {
         public INavigation Navigation { get; set; }
 
@@ -33,6 +33,11 @@ namespace BDDMobile.ViewModels
         public virtual void OnNavigatedTo(NavigationParameters parameters)
         {
           
+        }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+         
         }
     }
 }
